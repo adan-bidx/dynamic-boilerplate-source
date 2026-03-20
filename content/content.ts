@@ -2,14 +2,19 @@
 export type HeroContent = {
   heading: string;
   description: string;
-  hint: string;
+  hintBefore: string;
+  hintBold1: string;
+  hintBetween: string;
+  hintBold2: string;
+  hintAfter: string;
   primaryCta: string;
   secondaryCta: string;
 };
 
 // ─── Navbar ─────────────────────────────────────────────────────────────────
 export type NavbarContent = {
-  brandName: string;
+  brandPrefix: string;
+  brandSuffix: string;
 };
 
 // ─── Root ───────────────────────────────────────────────────────────────────
@@ -24,12 +29,17 @@ export const defaultContent: SiteContent = {
   hero: {
     heading: "To get started, edit the page.tsx file.",
     description: "Looking for a starting point or more instructions?",
-    hint: "Head over to Templates or the Learning center.",
+    hintBefore: "Head over to ",
+    hintBold1: "Templates",
+    hintBetween: " or the ",
+    hintBold2: "Learning",
+    hintAfter: " center.",
     primaryCta: "Deploy Now",
     secondaryCta: "Documentation",
   },
   navbar: {
-    brandName: "NEXT.JS",
+    brandPrefix: "NEXT",
+    brandSuffix: ".JS",
   },
 };
 
