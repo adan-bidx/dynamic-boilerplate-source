@@ -1,23 +1,31 @@
 import { getContent } from "@/content/content";
 import { Button } from "@/components/ui/button";
+import { Triangle } from "lucide-react";
 
 export const HeroSection = () => {
   const { hero } = getContent();
 
   return (
-    <section className="flex min-h-[calc(100vh-100px)] flex-col justify-center px-8 sm:px-16 max-w-2xl">
-      <h1 className="text-2xl font-bold tracking-tight sm:text-3xl leading-tight">
+    <section className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+      <h1 className="max-w-xl text-[28px] font-bold leading-[1.25] tracking-tight sm:text-[36px]">
         {hero.heading}
       </h1>
-      <p className="mt-5 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+      <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
         {hero.description}
       </p>
-      <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-        {hero.hint}
+      <p className="text-[15px] leading-relaxed text-muted-foreground">
+        {hero.hintBefore}
+        <span className="font-semibold text-foreground">{hero.hintBold1}</span>
+        {hero.hintBetween}
+        <span className="font-semibold text-foreground">{hero.hintBold2}</span>
+        {hero.hintAfter}
       </p>
-      <div className="mt-8 flex items-center gap-3">
-        <Button className="rounded-full px-6">{hero.primaryCta}</Button>
-        <Button variant="outline" className="rounded-full px-6">
+      <div className="mt-8 flex items-center gap-4">
+        <Button className="h-11 gap-2 rounded-lg px-5">
+          <Triangle className="h-3.5 w-3.5 fill-current" />
+          {hero.primaryCta}
+        </Button>
+        <Button variant="outline" className="h-11 rounded-lg px-5">
           {hero.secondaryCta}
         </Button>
       </div>
